@@ -1,0 +1,6 @@
+class Tattoo < ApplicationRecord
+  belongs_to :user
+  has_many :bookings
+  validates :photo, :description, presence: true
+end
+
