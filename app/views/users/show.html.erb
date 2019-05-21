@@ -1,8 +1,8 @@
 
-<h1>hi Francisco</h1>
+<h1>hi <%= @user.name %></h1>
 
 <%# @tattoos.each do |tattoo| %>
-  <% if policy(@tattoo).edit? %>
-    <%= link_to "Update", edit_tattoo_path(tattoo) %>
+  <% if policy(@tattoo).show? %>
+    <%= link_to "Show your tattoo", @tattoo %>
   <% end %>
 <%# end %>

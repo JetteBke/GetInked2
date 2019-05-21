@@ -6,6 +6,7 @@ class TattoosController < ApplicationController
   def show
     @tattoo = Tattoo.find(params[:id])
     authorize @tattoo
+    @user = User.find(params[:id])
   end
 
   def new
