@@ -1,2 +1,19 @@
 <h1>Tattoos#show</h1>
 <p>Find me in app/views/tattoos/show.html.erb</p>
+<p>shows one tattoo selected by tattoo_id (Jette)</p>
+
+
+
+<ul>
+  <% if policy(@tattoo).destroy? %>
+    <li><%= link_to "Delete your tattoo", tattoos_path %></li>
+  <% end %>
+  <li><%= link_to "Show all tattoos", tattoos_path %></li>
+  <% if @tattoo.user_id == @user.id %>
+<li><%= link_to "See artist", user_path(@user) %></li>
+<% end %>
+
+</ul>
+
+
+
