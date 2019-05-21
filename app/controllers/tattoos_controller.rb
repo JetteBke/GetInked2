@@ -1,18 +1,21 @@
 class TattoosController < ApplicationController
   def index
-    @tattoos = Tattoo.all
+    @tattoos = policy_scope(Tattoo).order(created_at: :desc)
   end
 
   def show
     @tattoo = Tattoo.find(params[:id])
+    authorize @tattoo
   end
 
   def new
     @tattoo = Tattoo.new
+    authorize @tattoo
   end
 
   def create
     @tattoo = Tattoo.create(tattoo_params)
+    authorize @tattoo
     if @tattoo.save
       redirect_to tattoos_path
     else
@@ -23,7 +26,8 @@ class TattoosController < ApplicationController
   def destroy
     @tattoo = Tattoo.find(params[:id])
     @tattoo.delete
-    redirect_to @tatt
+    redirect_to @tattoo
+    authorize @tattoo
   end
 
   private
