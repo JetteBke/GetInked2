@@ -1,2 +1,12 @@
-<h1>Tattoos#new</h1>
-<p>Find me in app/views/tattoos/new.html.erb</p>
+<h1>Tattoos</h1>
+
+
+<b>Insert a tattoo</b>
+
+
+
+<%= simple_form_for(@tattoo) do |f| %>
+  <%= f.input :photo %>
+  <%= f.input :description %>
+  <%= f.submit "add a photo", class: "btn btn-primary" %>
+<% end %>
