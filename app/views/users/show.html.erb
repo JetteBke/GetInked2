@@ -1,0 +1,8 @@
+
+<h1>hi Francisco</h1>
+
+<%# @tattoos.each do |tattoo| %>
+  <% if policy(@tattoo).edit? %>
+    <%= link_to "Update", edit_tattoo_path(tattoo) %>
+  <% end %>
+<%# end %>
