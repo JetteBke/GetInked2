@@ -1,47 +1,33 @@
-  <div class="container">
-
+<div class="container">
   <div class="flexbox-container">
-
     <h2>Available Tattoos</h2>
   </div>
-
-    <div class="search">
+  <div class="search">
     <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search criteria" id="search">
-      </div>
-      <div class="form-group">
-        <input type="password" placeholder="Sort by" class="form-control" id="sort">
-      </div>
-
-      <div class="col">
+      <input type="text" class="form-control" placeholder="Search criteria" id="search">
+    </div>
+    <div class="form-group">
+      <input type="password" placeholder="Sort by" class="form-control" id="sort">
+    </div>
+    <div class="col">
       <a href="" class="btn btn-primary">Search</a>
-
     </div>
-
-    </div>
-
-    <div class="container m-16">
-
-  <div class="cards">
-
-    <% @tattoos.each do |tattoo| %>
-    <div class="card">
-      <div class="card-image">
-    <%= cl_image_tag(tattoo.photo,
-
-     width: 300, height: 300, crop: :fill) %>
-    <a href="" class="btn btn-primary"><%= link_to tattoo.description, tattoo %></a>
-    </div>
-    </div>
-     <% end %>
-
   </div>
 
+  <div class="container m-16">
+    <div class="cards">
+      <% @tattoos.each do |tattoo| %>
+        <div class="card">
+          <div class="card-image">
+            <%= cl_image_tag(tattoo.photo, width: 300, height: 300, crop: :fill) %>
+            <button class="btn btn-success"><%= link_to tattoo.description, tattoo %></button>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
 
-</div>
-
-</div>
 
 
 
