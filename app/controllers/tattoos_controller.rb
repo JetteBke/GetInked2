@@ -19,6 +19,7 @@ class TattoosController < ApplicationController
 
   def create
     @tattoo = Tattoo.create(tattoo_params)
+    @tattoo.user = current_user
     authorize @tattoo
     if @tattoo.save
       redirect_to tattoos_path
