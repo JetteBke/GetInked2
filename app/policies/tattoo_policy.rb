@@ -23,7 +23,7 @@ class TattooPolicy < ApplicationPolicy
   end
 
   def destroy?
-    true if user.role == "artist" && record.user == user
+    record.user == user
   end
 
   # class Scope < Scope
