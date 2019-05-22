@@ -1,6 +1,39 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tattoo Listings</title>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Varela">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- <div class="container d-flex"> -->
+  <div class="jumbotron" style="background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(images/Jess-Crop.jpg); background-size: 100%; background-size: cover;">
+      <h1 class ="logo">GetInked</h1>
+      <p>Find your perfect tattoo.</p>
+    </div>
+<div class="container">
 
 
 <%= link_to "Go to tattoos", tattoos_path %>
+  </div>
+
+  <div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+</div>
+<!-- </div> -->
+</body>
+</html>
+
+
+
 <%#= link_to "Go to my profile", user_path(@user) %>
