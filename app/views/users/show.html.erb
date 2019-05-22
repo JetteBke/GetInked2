@@ -1,8 +1,14 @@
 
 <h1>hi <%= @user.name %></h1>
 
-<%# @tattoos.each do |tattoo| %>
-  <% if policy(@tattoo).show? %>
-    <%= link_to "Show your tattoo", @tattoo %>
+<% @tattoos.each do |tattoo| %>
+  <% if policy(tattoo).show? %>
+    <%= link_to "Show your tattoo", tattoo %>
   <% end %>
-<%# end %>
+<% end %>
+
+  <% if @user.role == "artist"  %>
+    <%= link_to "Add a tattoo", new_tattoo_path %>
+  <% end %>
+
+<%#= && @tattoos.first.user == current_user  %>

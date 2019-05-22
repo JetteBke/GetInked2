@@ -4,6 +4,10 @@ class TattooPolicy < ApplicationPolicy
     return true
   end
 
+  def new?
+    return true
+  end
+
   def show?
     true
   end
@@ -19,12 +23,12 @@ class TattooPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user
+    true if user.role == "artist" && record.user == user
   end
 
-  class Scope < Scope
-    def resolve
-      scope.all
-    end
-  end
+  # class Scope < Scope
+  #   def resolve
+  #     scope.all
+  #   end
+  # end
 end

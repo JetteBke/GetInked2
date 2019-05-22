@@ -5,13 +5,16 @@ class TattoosController < ApplicationController
 
   def show
     @tattoo = Tattoo.find(params[:id])
+    @booking = Booking.new
     authorize @tattoo
-    @user = User.find(params[:id])
+    @user = current_user
+    @artist = @tattoo.user
   end
 
   def new
     @tattoo = Tattoo.new
     authorize @tattoo
+    @user = current_user
   end
 
   def create
