@@ -7,8 +7,8 @@
   <% end %>
 <% end %>
 
-  <% if @user.role == "artist"  %>
+  <% if @user.role == "artist" && @user == current_user %>
     <%= link_to "Add a tattoo", new_tattoo_path %>
   <% end %>
 
-<%#= && @tattoos.first.user == current_user  %>
+<%#=   %>
