@@ -1,13 +1,6 @@
 <h1>Tattoos#index</h1>
 <p>Find me in app/views/tattoos/index.html.erb</p>
 
-<div>
-<ul>
-  <% @tattoos.each do |tattoo| %>
-    <li><%= link_to tattoo.description, tattoo %></li>
-  <% end %>
-</ul>
-</div>
 
 
   <div class="container">
@@ -36,42 +29,18 @@
 
   <div class="cards">
 
-<div class="card">
-  <img class="card-img-top img-responsive" src="images/rose.jpg" alt="Rose">
-  <div>
-       <a href="" class="btn btn-primary">View</a>
+    <% @tattoos.each do |tattoo| %>
+    <div class="card"><%= link_to tattoo.description, tattoo %>
+      <div class="card-image">
+    <%= cl_image_tag(tattoo.photo,
+     width: 400, height: 300, crop: :fill) %>
+    <a href="" class="btn btn-primary">View</a>
     </div>
-</div>
-  <div class="card">
-    <img class="card-img-top img-responsive" src="images/rose.jpg" alt="Rose">
-    <div>
-        <a href="" class="btn btn-primary">View</a>
-      </div>
     </div>
-  <div class="card">
-    <img class="card-img-top img-responsive" src="images/rose.jpg" alt="Rose">
-    <div>
-        <a href="" class="btn btn-primary">View</a>
-      </div>
-    </div>
-  <div class="card">
-    <img class="card-img-top img-responsive" src="images/rose.jpg" alt="Rose">
-    <div>
-        <a href="" class="btn btn-primary">View</a>
-      </div>
-    </div>
-  <div class="card">
-    <img class="card-img-top img-responsive" src="images/rose.jpg" alt="Rose">
-    <div>
-        <a href="" class="btn btn-primary">View</a>
-      </div>
-    </div>
-    <div class="card">
-    <img class="card-img-top img-responsive" src="images/rose.jpg" alt="Rose">
-    <div>
-        <a href="" class="btn btn-primary">View</a>
-      </div>
-    </div>
+     <% end %>
+
+  </div>
+
 </div>
 
 </div>
