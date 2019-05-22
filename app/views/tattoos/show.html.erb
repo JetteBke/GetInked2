@@ -1,6 +1,4 @@
-<h1>Tattoos#show</h1>
-<p>Find me in app/views/tattoos/show.html.erb</p>
-<p>shows one tattoo selected by tattoo_id (Jette)</p>
+
 
 <div class="container-fluid">
   <div class="row content">
@@ -23,6 +21,8 @@
 
   </div>
 
+       <%= cl_image_tag(@tattoo.photo,
+     width: 400, height: 300, crop: :fill) %>
 <div class="col-sm-6">
   <div class="card-product">
   <h1>Dr. Woo</h1>
