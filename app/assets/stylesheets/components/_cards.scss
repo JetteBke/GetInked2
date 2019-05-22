@@ -19,6 +19,8 @@
 
 .card {
  display: flex;
+ height: auto;
+ width: 300px;
  align-items: center;
  box-shadow: 6px 6px 2px 1px rgba(0, 0, 255, .1);
 }
