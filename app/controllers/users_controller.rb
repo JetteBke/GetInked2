@@ -2,6 +2,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     authorize @user
-    @tattoo = Tattoo.last
+    @tattoos = Tattoo.where(user: @user)
   end
 end

@@ -8,5 +8,7 @@
 <%= simple_form_for(@tattoo) do |f| %>
   <%= f.input :photo %>
   <%= f.input :description %>
-  <%= f.submit "add a photo", class: "btn btn-primary" %>
+  <%= f.submit "Create tattoo", class: "btn btn-primary" %>
 <% end %>
+
+<%= link_to "Go back to artist profile", @user %>
