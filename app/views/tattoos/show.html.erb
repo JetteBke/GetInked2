@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row content">
 
-    <div class="col-sm-6">
+<!--     <div class="col-sm-6">
       <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -15,45 +15,34 @@
           </div>
         </div>
       </div>
-    </div>
-
+    </div> -->
+    <div class ="p-2">
        <%= cl_image_tag(@tattoo.photo,
      width: 400, height: 300, crop: :fill) %>
+    </div>
     <div class="col-sm-6">
       <div class="card-product">
         <h1>Dr. Woo</h1>
         <h2>📍Studio: El Diablo, 1200-369 Lisboa</h2>
         <h2>💉Style: Stick and Poke</h2>
         <h3> About Dr.Woo</h3>
-
-          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-
-    <a href="" class="btn btn-primary">Book Now</a>
-
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <% if current_user.role == "customer" %>
+          <%= link_to "Book now", new_tattoo_booking_path(@tattoo), class: 'btn btn-primary'%>
+        <% end %>
+      </div>
     </div>
-
   </div>
+</div>
 
-  </div>
-
-  </div>
-
-<ul>
-
-  <li><%= link_to "Show all tattoos", tattoos_path %></li>
-  <%# if @tattoo.user_id == @user.id %>
-<li><%= link_to "Go to my profile", user_path(@user) %></li>
-<%# end %>
-<li><%= link_to "Go to artist", user_path(@artist) %></li>
-
-<% if policy(@booking).new? && @user.role == "customer" %>
-  <li><%= link_to "Book this tattoo", new_user_booking_path(@user) %></li>
-<% end %>
-  <% if policy(@tattoo).destroy? %>
-    <li><%= link_to "Delete your tattoo", tattoos_path%></li>
-  <% end %>
-</ul>
+<div class="mt-4">
+    <%= link_to "Show all tattoos", tattoos_path %> |
+    <%= link_to "Go to my profile", user_path(@user) %> |
+    <%= link_to "Go to artist", user_path(@artist) %> |
+    <% if policy(@tattoo).destroy? %>
+      <%= link_to "Delete your tattoo", tattoos_path%> |
+    <% end %>
+</div>
 
 
 

@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :edit, :create, :destroy]
+  before_action :set_booking, only: [:show, :edit, :destroy]
   def index
-    @bookings = Booking.all
+    @bookings = policy_scope(Booking).order(created_at: :desc)
   end
 
   def show
@@ -9,14 +9,17 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
-    @user = current_user
+    @tattoo = Tattoo.find(params[:tattoo_id])
     authorize @booking
   end
 
   def create
-    @booking = Booking.create(booking_params)
+    @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    @booking.tattoo = Tattoo.find(params[:tattoo_id])
+    authorize @booking
     if @booking.save
-      redirect_to bookings_path
+      redirect_to current_user
     else
       render :new
     end
@@ -31,7 +34,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.delete
-    redirect_to @tatt
+    redirect_to current_user
   end
 
   private

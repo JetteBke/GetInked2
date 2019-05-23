@@ -1,8 +1,0 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
-
-<% @tattoos.each do |tattoo| %>
-  <% if policy(tattoo).edit? %>
-    <%= link_to "Update", edit_tattoo_path(tattoo) %>
-  <% end %>
-<% end %>
