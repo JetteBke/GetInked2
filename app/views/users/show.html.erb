@@ -1,34 +1,48 @@
-
-
 <div class="container-fluid">
   <div class="row content">
     <div class="col-sm-6">
-      <div id="carouselExampleSlidesOnly" data-interval ="4000" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <%= cl_image_tag(@artist.tattoos[0].photo,
-     width: 400, height: 300, crop: :fill) %>
+      <% if @user.role == "artist" %>
+        <div id="carouselExampleSlidesOnly" data-interval ="4000" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <%= cl_image_tag(@artist.tattoos[0].photo,
+       width: 400, height: 300, crop: :fill) %>
+            </div>
+            <div class="carousel-item">
+              <%= cl_image_tag(@artist.tattoos[1].photo,
+       width: 400, height: 300, crop: :fill) %>
+            </div>
+            <div class="carousel-item">
+             <%= cl_image_tag(@artist.tattoos[2].photo,
+       width: 400, height: 300, crop: :fill) %>
+            </div>
           </div>
-          <div class="carousel-item">
-            <%= cl_image_tag(@artist.tattoos[1].photo,
-     width: 400, height: 300, crop: :fill) %>
           </div>
-          <div class="carousel-item">
-           <%= cl_image_tag(@artist.tattoos[2].photo,
-     width: 400, height: 300, crop: :fill) %>
-          </div>
-        </div>
+            <% elsif @user.role == "customer" %>
+            <div class="card-product card">
+            <ul class="list-group">
+              <li class="list-group-item">Your bookings:</li>
+              <% @bookings.each do |booking| %>
+                <% if booking.user == current_user %>
+                  <li class="list-group-item">
+                    <strong> <%= booking.tattoo.description %></strong> (by <%= booking.tattoo.user.name %>) is
+                    <%= booking.status %> for <%= booking.date %> </li>
+                <% end %>
+              <% end %>
+            </ul>
+          <% end %>
         </div>
       </div>
+
 
     <div class="col-sm-6">
       <div class="card-product">
         <h1><%= @user.name %></h1>
-        <h2>📍Studio: El Diablo, 1200-369 Lisboa</h2>
+           <% if current_user.role == "artist" %>
+           <h2>📍Studio: El Diablo, 1200-369 Lisboa</h2>
         <h2>💉Style: Stick and Poke</h2>
         <h3> About Dr.Woo</h3>
           <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostru.</p>
-           <% if current_user.role == "artist" %>
           <%= link_to "Add Tattoo", new_tattoo_path, class: 'btn btn-primary'%>
           <% end %>
       </div>
@@ -41,6 +55,5 @@
       <%= link_to "Add a tattoo", new_tattoo_path, class: 'btn btn-special m-2' %>
   <% end %>
     <%= link_to "Show all tattoos", tattoos_path, class: 'btn btn-special m-2' %>
-    <%= link_to "Go to my profile", user_path(@user), class: 'btn btn-special m-2' %>
-    <%= link_to "Go to artist", user_path(@artist), class: 'btn btn-special m-2' %>
+    <%= link_to "Go to my profile", user_path(current_user), class: 'btn btn-special m-2' %>
 </div>
