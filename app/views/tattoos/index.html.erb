@@ -17,12 +17,12 @@
   <div class="container m-16">
     <div class="cards">
       <% @tattoos.each do |tattoo| %>
-        <div class="card">
-          <div class="card-image">
-            <%= cl_image_tag(tattoo.photo, width: 300, height: 300, crop: :fill) %>
-            <button class="btn btn-success"><%= link_to tattoo.description, tattoo %></button>
-          </div>
+      <div class="card">
+        <div class="card-image">
+          <%= cl_image_tag(tattoo.photo, width: 300, height: 300, crop: :fill) %>
+          <button class="btn btn-success"><%= link_to tattoo.description, tattoo %></button>
         </div>
+      </div>
       <% end %>
     </div>
   </div>
