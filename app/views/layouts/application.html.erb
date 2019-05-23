@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
 
   <meta charset="utf-8">
   <title>Tattoo Listings</title>
@@ -9,18 +9,33 @@
   <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <%= csrf_meta_tags %>
-    <%= action_cable_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
-  </head>
-  <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
-    <%= yield %>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
-    <%= render 'shared/footer' %>
-  </body>
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <%= csrf_meta_tags %>
+  <%= action_cable_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+</head>
+<body>
+  <%= render 'shared/navbar' %>
+  <%= render 'shared/flashes' %>
+  <%= yield %>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_pack_tag 'application' %>
+  <footer class="footer">
+    <div class="container text-center">
+      <p style="color:grey" class="copyright">Copyright 2019 GetInked Inc - Part of the Volunteasy Group. All Rights Reserved.</p>
+
+      <a href="#"><i style="color:grey" class="fab fa-github"></i></a>
+      <a href="#"><i style="color:grey" class="fab fa-instagram"></i></a>
+      <a href="#"><i style="color:grey" class="fab fa-facebook"></i></a>
+      <a href="#"><i style="color:grey" class="fab fa-twitter"></i></a>
+      <a href="#"><i style="color:grey" class="fab fa-linkedin"></i></a>
+    </div><!--End container-->
+  </footer><!--End footer 2-->
+
+  </div>
+
+</body>
 </html>

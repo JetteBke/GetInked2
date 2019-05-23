@@ -1,51 +1,30 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
 
-  <div class="d-flex justify-content-end bd-highlight mb-3">
-        <ul class="navbar-nav list-inline">
-
-  <div class="p-2"><li class="navbar-brand nav-item">
-        <%= link_to "GetInked", root_path, class: "nav-link" %>
-      </li></div>
-  <div class="p-2"><li class="navbar-brand nav-item">
-       <!--  <%#= link_to "Profile", user_path(current_user), class: "nav-link" %> -->
-      </li></div>
-  <div class="p-2"><li class="navbar-brand nav-item">
-        <%= link_to "Tattoos", tattoos_path, class: "nav-link" %>
-      </li></div>
-  <div class="p-2"><li class="navbar-brand nav-item">
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
-      </li></div>
-  </ul>
-</div>
-
-</nav>
-
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <a class="navbar-brand" <%= link_to 'GetInked', root_path %></a>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <div class="d-flex justify-content-end bd-highlight mb-3" style="width: 100%;">
+    <ul class="navbar-nav list-inline" style="width: 100%; justify-content: space-between;">
+     <div class="p-2"><li class="navbar-brand nav-item">
+      <%= link_to "GetInked", root_path, class: "nav-link" %>
+    </li></div>
+    <% if user_signed_in? %>
 
 
-  <div class="collapse navbar-collapse mr-auto" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-      <li class="nav-item active">
-        <%= link_to "Home", "#", class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Messages", "#", class: "nav-link" %>
-      </li>
-      <li class="nav-item dropdown">
-        <%= image_tag "https://media.licdn.com/dms/image/C5603AQGzzopGuQA6-g/profile-displayphoto-shrink_200_200/0?e=1564012800&v=beta&t=hLpIyyJtR_HBTnihKRx3LZxoxeHAbeYZx2uG1guMamY", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+ <!--  <div class="p-2"><li class="navbar-brand nav-item">
+        <%#= link_to "Profile", user_path(current_user), class: "nav-link" %>
+      </li></div> -->
+
+
+      <div class="p-2"><li class="float-right navbar-brand nav-item dropdown ">
+        <%= image_tag "https://source.unsplash.com/random/100x100", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Action", "#", class: "dropdown-item" %>
-          <%= link_to "Another action", "#", class: "dropdown-item" %>
+          <%#= link_to "Action here?", "#", class: "dropdown-item" %>
+                  <%= link_to "All Tattoos", tattoos_path, class: "dropdown-item"%>
+
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         </div>
-      </li>
+      </li></div>
+
+
       <% else %>
       <li class="nav-item">
         <%= link_to "Login", new_user_session_path, class: "nav-link" %>
@@ -53,4 +32,5 @@
       <% end %>
     </ul>
   </div>
-</div>
+
+</nav>
