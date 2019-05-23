@@ -36,13 +36,11 @@
   </div>
 </div>
 
-<div class="mt-3">
-  <% if @user.role == "artist" && @user == current_user %>
-      <%= link_to "Add a tattoo", new_tattoo_path %>
+<div class="d-flex justify-content-center align-items-center">
+    <% if @user.role == "artist" && @user == current_user %>
+      <%= link_to "Add a tattoo", new_tattoo_path, class: 'btn btn-special m-2' %>
   <% end %>
-  <%= link_to "Show all tattoos", tattoos_path %> |
-  <%= link_to "Go to my profile", user_path(@user) %> |
-  <%= link_to "Go to artist", user_path(@artist) %> |
+    <%= link_to "Show all tattoos", tattoos_path, class: 'btn btn-special m-2' %>
+    <%= link_to "Go to my profile", user_path(@user), class: 'btn btn-special m-2' %>
+    <%= link_to "Go to artist", user_path(@artist), class: 'btn btn-special m-2' %>
 </div>
-
-
