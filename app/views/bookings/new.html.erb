@@ -1,7 +1,7 @@
-<div class="my-forms">
+<div class="my-forms my-4">
   <div class="container py-3 purple-gradient color-block">
     <h1>Book this amazing >> <%= @tattoo.description %> <<</h1>
-    <p>Fill in information below, see the details of the <%= link_to @tattoo.description, @tattoo %> or go back to see <%= link_to "all tattoos", tattoos_path %></p>
+    <p>Fill in information below, see the details of the <%= link_to @tattoo.description, @tattoo, class:'text-white' %> or go back to see <%= link_to "all tattoos", tattoos_path, class:'text-white' %></p>
     <%= simple_form_for [@tattoo, @booking] do |f| %>
       <%= f.input :date, as: :date, html5: true, label_html: {class:'pt-4'} %>
       <%= f.input :time, as: :time, label_html: {class:'pt-4'} %>
@@ -11,5 +11,3 @@
 
   </div>
 </div>
-
-<%#= link_to "Show tattoo", @tattoo %>

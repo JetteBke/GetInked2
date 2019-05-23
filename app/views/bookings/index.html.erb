@@ -1,13 +1,10 @@
 <h1>Your bookings</h1>
-
-
 <ul class="list-group">
 <% @bookings.each do |booking| %>
   <% if booking.user == current_user %>
     <li class="list-group-item">
       <strong> <%= booking.tattoo.description %></strong> (by <%= booking.tattoo.user.name %>) is
       <%= booking.status %> for <%= booking.date %> </li>
-
   <% end %>
 <% end %>
 </ul>
