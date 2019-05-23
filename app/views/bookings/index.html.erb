@@ -1,2 +1,9 @@
-<h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
+<h1>Your bookings</h1>
+
+<ul class="list-group">
+<% @bookings.each do |booking| %>
+  <li class="list-group-item">
+    <strong> <%= booking.tattoo.description %></strong> (by <%= booking.tattoo.user.name %>) is
+    <%= booking.status %> for <%= booking.date %></li>
+<% end %>
+</ul>
