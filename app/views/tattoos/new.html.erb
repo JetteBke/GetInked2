@@ -1,12 +1,16 @@
-<h1>Tattoos</h1>
+<div class="my-forms">
+  <div class="container py-5">
+    <h1>Add a tattoo to your amazing portfolio, <%= @user.name %>!</h1>
 
-<b>Insert a tattoo</b>
+    <p>Insert information below or go back to <%= link_to "your profile", @user, class:'text-white' %></p>
 
-<%= simple_form_for(@tattoo) do |f| %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.input :description %>
-  <%= f.submit "Create tattoo", class: "btn btn-primary" %>
-<% end %>
+    <%= simple_form_for(@tattoo) do |f| %>
+      <%= f.input :photo, label_html: {class:'pt-4'}  %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.input :description, label_html: {class:'pt-4'}  %>
+      <%= f.submit "Create tattoo", class: "btn btn-primary my-3" %>
+    <% end %>
+  </div>
+</div>
 
-<%= link_to "Go back to artist profile", @user %>
+
