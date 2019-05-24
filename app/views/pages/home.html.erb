@@ -5,7 +5,7 @@
     <%= link_to "See Tattoos", tattoos_path, class:'btn btn-light p-3 mt-4' %>
     <% if user_signed_in? %>
       <% if current_user.role == "artist" %>
-        <%= link_to "My profile", tattoos_path, class:'btn btn-light p-3 mt-4 ml-4'  %>
+        <%= link_to "My profile", current_user, class:'btn btn-light p-3 mt-4 ml-4'  %>
       <% end %>
     <% end %>
   </div>
