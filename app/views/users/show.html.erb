@@ -23,6 +23,9 @@
         </div>
         <div class="card-product">
           <h1><%= @user.name %></h1>
+           <% if @user == current_user  %>
+              <%= link_to "Add Tattoo", new_tattoo_path, class: 'btn btn-special py-4 justify-content-center'%>
+            <% end %>
           <h2>📍Lisboa </h2>
           <h2>💉 Style: Stick and Poke</h2>
           <h3> Reach out by sending an e-mail to <%= @user.email %></h3>
@@ -33,9 +36,7 @@
               <li><%= tattoo.description %></li>
               <% end %>
             </ul>
-            <% if @user == current_user  %>
-              <%= link_to "Add Tattoo", new_tattoo_path, class: 'btn btn-primary'%>
-            <% end %>
+
         </div>
       </div>
 
