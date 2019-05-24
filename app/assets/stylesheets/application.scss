@@ -99,11 +99,18 @@ p {
 }
 
 .btn-special {
-  background-color: #0d31e2;
+  background-image: linear-gradient(to right, blue, pink);
   color: white;
+  overflow: hidden;
+
 }
 
 .btn-special a {
   color: white;
   align-items:center;
+  overflow: hidden;
+}
+
+.profile-button {
+  display:inline-block;
 }
