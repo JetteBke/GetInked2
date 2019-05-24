@@ -2,7 +2,11 @@
   <h1 class ="logo">GetInked</h1>
   <p class="text-black" text-align: center> Your body is a journal, and your tattoos are your story.</p>
   <%= link_to "See Tattoos", tattoos_path, class:'btn btn-light p-4' %>
-  <%= link_to "See Tattoos", tattoos_path, class:'btn btn-light p-4' %>
+  <% if user_signed_in? %>
+    <% if current_user.role == "artist" %>
+      <%= link_to "My profile", tattoos_path, class:'btn btn-light p-2' %>
+    <% end %>
+  <% end %>
 </div>
 
 <div class="container">
