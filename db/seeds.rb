@@ -38,12 +38,12 @@ tattoos = Tattoo.create([{ remote_photo_url: url1, description: "a butterly", us
   { remote_photo_url: url4, description: "landscape tattoo", user: User.second},
   { remote_photo_url: url5, description: "flower on back", user: User.second},
   { remote_photo_url: url6, description: "snake", user: User.first},
-  { remote_photo_url: url7, description: "hands", user: User.first},
+  { remote_photo_url: url7, description: "hands", user: User.last},
   { remote_photo_url: url8, description: "lion", user: User.second},
-  { remote_photo_url: url9, description: "heart lifeline", user: User.second},
-  { remote_photo_url: url10, description: "emo", user: User.first},
-  { remote_photo_url: url11, description: "fight club", user: User.first},
-  { remote_photo_url: url12, description: "stitch", user: User.second},
+  { remote_photo_url: url9, description: "heart lifeline", user: User.last},
+  { remote_photo_url: url10, description: "emo", user: User.last},
+  { remote_photo_url: url11, description: "fight club", user: User.last},
+  { remote_photo_url: url12, description: "stitch", user: User.last},
   { remote_photo_url: url13, description: "shut up", user: User.last},
   { remote_photo_url: url14, description: "we are all mad here", user: User.last}
 ])
