@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @booking.tattoo = Tattoo.find(params[:tattoo_id])
     authorize @booking
     if @booking.save
-      redirect_to current_user
+      redirect_to user_bookings_path(current_user)
     else
       render :new
     end
