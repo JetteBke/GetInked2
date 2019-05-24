@@ -13,7 +13,7 @@ puts 'destroyed all'
 url1 = 'https://www.tattooinsider.com/wp-content/uploads/2018/03/Butterfly-Tattoo-by-Alan-Victor.jpg'
 url2 = 'http://www.spews.org/wp-content/uploads/2018/05/georgiagreynyc-4-800x600.png'
 url3 = 'https://www.tattooinsider.com/wp-content/uploads/2017/12/Rose-Small-Tattoo-by-Romeo-Lacoste-.jpg'
-url4 = 'https://slack-imgs.com/?c=1&url=https%3A%2F%2Fres.cloudinary.com%2Fdj1bs7vyp%2Fimage%2Fupload%2Fv1558531816%2Fmtntattoos_dvhghe.jpg'
+url4 = "https://slack-imgs.com/?c=1&url=https%3A%2F%2Fres.cloudinary.com%2Fdj1bs7vyp%2Fimage%2Fupload%2Fv1558531816%2Fmtntattoos_dvhghe.jpg"
 url5 = 'https://slack-imgs.com/?c=1&url=https%3A%2F%2Fres.cloudinary.com%2Fdj1bs7vyp%2Fimage%2Fupload%2Fv1558531816%2FJess-Crop_n29xjx.jpg'
 url6 = 'https://res.cloudinary.com/dj1bs7vyp/image/upload/v1558700151/2.png'
 url7 = 'https://res.cloudinary.com/dj1bs7vyp/image/upload/v1558700151/1.png'
@@ -33,20 +33,20 @@ users = User.create([{ email: "jackattack@gmail.com", role: "artist", name: "Jac
   { email: "lindseyrocks11@gmail.com", role: "artist", name: "Lindsey Samuels",  password: "123456", password_confirmation: "123456"}])
 puts 'user done'
 
-tattoos = Tattoo.create([{ remote_photo_url: url1, description: "a butterly", user: users.first},
-  { remote_photo_url: url2, description: "five triangles", user: users.first},
-  { remote_photo_url: url3, description: "a mircroneedled rose tattoo", user: users.second},
-  { remote_photo_url: url4, description: "landscape tattoo", user: users.second},
-  { remote_photo_url: url5, description: "flower on back", user: users.second},
-  { remote_photo_url: url6, description: "snake", user: users.first},
-  { remote_photo_url: url7, description: "hands", user: users.first},
-  { remote_photo_url: url8, description: "lion", user: users.second},
-  { remote_photo_url: url9, description: "heart lifeline", user: users.second},
-  { remote_photo_url: url10, description: "emo", user: users.first},
-  { remote_photo_url: url11, description: "fight club", user: users.first},
-  { remote_photo_url: url12, description: "stitch", user: users.second},
-  { remote_photo_url: url13, description: "shut up", user: users.second},
-  { remote_photo_url: url14, description: "we are all mad here", user: users.second}
+tattoos = Tattoo.create([{ remote_photo_url: url1, description: "a butterly", user: User.first},
+  { remote_photo_url: url2, description: "five triangles", user: User.first},
+  { remote_photo_url: url3, description: "a mircroneedled rose tattoo", user: User.second},
+  { remote_photo_url: url4, description: "landscape tattoo", user: User.second},
+  { remote_photo_url: url5, description: "flower on back", user: User.second},
+  { remote_photo_url: url6, description: "snake", user: User.first},
+  { remote_photo_url: url7, description: "hands", user: User.first},
+  { remote_photo_url: url8, description: "lion", user: User.second},
+  { remote_photo_url: url9, description: "heart lifeline", user: User.second},
+  { remote_photo_url: url10, description: "emo", user: User.first},
+  { remote_photo_url: url11, description: "fight club", user: User.first},
+  { remote_photo_url: url12, description: "stitch", user: User.second},
+  { remote_photo_url: url13, description: "shut up", user: User.last},
+  { remote_photo_url: url14, description: "we are all mad here", user: User.last}
 ])
 
 puts 'finished'

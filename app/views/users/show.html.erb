@@ -13,7 +13,7 @@
        width: 400, height: 300, crop: :fill) %>
             </div>
             <div class="carousel-item">
-             <%= cl_image_tag(@artist.tattoos[2].photo,
+             <%= cl_image_tag(@artist.tattoos[0].photo,
        width: 400, height: 300, crop: :fill) %>
             </div>
           </div>
@@ -22,10 +22,14 @@
           </div>
         </div>
         <div class="card-product">
+          <div class="d-flex justify-content-between mb-2">
           <h1><%= @user.name %></h1>
            <% if @user == current_user  %>
-              <%= link_to "Add Tattoo", new_tattoo_path, class: 'btn btn-special py-4 justify-content-center'%>
+           <div>
+              <%= link_to "Add Tattoo", new_tattoo_path, class: 'btn btn-special py-2 justify-content-center'%>
+              </div>
             <% end %>
+            </div>
           <h2>📍Lisboa </h2>
           <h2>💉 Style: Stick and Poke</h2>
           <h3> Reach out by sending an e-mail to <%= @user.email %></h3>
@@ -43,9 +47,6 @@
   </div>
 
   <div class="d-flex justify-content-center align-items-center">
-      <% if @user.role == "artist" && @user == current_user %>
-        <%= link_to "Add a tattoo", new_tattoo_path, class: 'btn btn-special m-2' %>
-    <% end %>
       <%= link_to "Show all tattoos", tattoos_path, class: 'btn btn-special m-2' %>
       <%= link_to "Go to my profile", user_path(current_user), class: 'btn btn-special m-2' %>
   </div>
