@@ -1,19 +1,9 @@
 <nav class="navbar navbar-lewagon">
-
-
-
-
-
-
-
-
-  <div class="p-2"><%= link_to "GetInked", root_path, class: "nav-link", style: "font-size: 20px;" %></div>
+  <div class="p-2"><%= link_to "GetInked2", root_path, class: "nav-link", style: "font-size: 20px;" %></div>
   <div class="ml-auto p-2 d-flex" style='margin-right: 25px;'>
     <% if user_signed_in? %>
-
-    <p class="list-inline p-2 mb-0 mt-4">Hi, <%= current_user[:name] %></p>
+    <p class="list-inline p-2 mb-0 mt-4">Hi, <%= current_user[:name]%> [<%= current_user[:role].capitalize%>]</p>
     <div class="nav-item dropdown list-inline p-2">
-
       <%= image_tag "https://source.unsplash.com/random/100x100", class: "avatar nav-link dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown" style = 'min-width: 40px;'>
         <%= link_to "All Tattoos", tattoos_path, class: "dropdown-item"%>
@@ -23,14 +13,12 @@
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
       </div>
     </div>
-
     <% else %>
     <div class="nav-item">
       <%= link_to "Login", new_user_session_path, class: "nav-link" %>
     </div>
     <% end %>
   </div>
-
 </nav>
 
 

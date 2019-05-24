@@ -14,7 +14,9 @@
                   required: false,
                   input_html: { autocomplete: "current-password" },
                   label_html: {class:'py-2'} %>
-      <%= f.input :remember_me, label_html: {class:'pt-4'}, as: :boolean if devise_mapping.rememberable? %>
+      <%= f.input :remember_me, label_html: {class:'pt-4', style: 'margin-left: 7px;'},
+      input_html: {style: 'margin-top: 17px; margin-left: -12px;' },
+                  as: :boolean if devise_mapping.rememberable? %>
     </div>
 
     <div class="form-actions btn btn-primary my-3">
