@@ -6,8 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts 'started seeding'
-Tattoo.destroy_all
-User.destroy_all
+
 puts 'destroyed all'
 
 url1 = 'https://www.tattooinsider.com/wp-content/uploads/2018/03/Butterfly-Tattoo-by-Alan-Victor.jpg'
