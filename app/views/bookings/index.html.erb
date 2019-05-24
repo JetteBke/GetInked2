@@ -1,16 +1,21 @@
-<div class="container">
-  <h1>Your bookings</h1>
-  <ul class="list-group">
+<div class="container text-center">
+  <h1 class="my-5">Your bookings</h1>
+  <ul class="list-group mb-5">
     <% if !@bookings.present? %>
-    <li class="list-group-item">
+    <li class="list-group-item list-group-item-primary">
       No Bookings yet
     </li>
     <% else %>
     <% @bookings.each do |booking| %>
     <% if booking.user == current_user %>
-    <li class="list-group-item">
-      <strong> <%= booking.tattoo.description %></strong> (by <%= booking.tattoo.user.name %>) is
-      <%= booking.status %> for <%= booking.date %> </li>
+    <li class="list-group-item list-group-item-success text-left">
+      <strong> <%= booking.date.to_formatted_s(:short) %>
+
+<%= link_to booking.tattoo.description, tattoo_path(booking.tattoo)%>
+
+        </strong> has been <%= booking.status %> with <%= booking.tattoo.user.name %>
+       </li>
+      <!-- other datetime formats here: https://apidock.com/rails/DateTime/to_formatted_s -->
       <% end %>
       <% end %>
       <% end %>
